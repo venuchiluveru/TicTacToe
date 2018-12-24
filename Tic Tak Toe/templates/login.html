@@ -1,0 +1,22 @@
+<div class=" container" ng-if="isLoginPageVisible">
+        <h2>Login</h2>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" 
+                    ng-model="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd"
+                        ng-model="password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-primary" ng-click="onSubmitButtonClick()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>

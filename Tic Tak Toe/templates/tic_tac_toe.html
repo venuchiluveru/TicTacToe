@@ -1,0 +1,40 @@
+
+  <div class="ng-cloak" ng-cloak="">
+   <div>
+     <h2>Tic Tac Toe</h2>
+     <div style="width:600px;float: left;">
+     <div class="gameinfo">
+      <input type="text" name="player1" ng-model="playerone"><br/><br/>
+      <input type="text" name="player2" ng-model="playertwo">  <br/>
+       <button ng-click="startGame()">New Game</button>
+       <button ng-click="startGame()">Restart</button>
+       <p ng-show="errors">{{errors}}</p>       
+     </div>
+      <hr/>
+      <div class="board">
+        <p ng-show="!winner && !draw">{{currentPlayerName}}'s turn</p>
+        <p ng-show="winner" class="won">{{currentPlayerName}} WON</p>
+        <p ng-show="draw">DRAW</p>
+        <div ng-repeat="positionInfo in board" class="square" ng-click="playTurn($event, positionInfo)" ng-class="{'floatme': !($index % boardsize)}"> 
+          {{positionInfo.player}}
+        </div>   
+      </div>
+    </div>
+    <div style="display: table-cell">
+      <h3>Score</h3>
+      <button ng-click="reset()">Reset</button>
+      <table class="table">
+        <thead>
+          <th>{{playerone}}</th>
+          <th>{{playertwo}}</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{scoreOne}}</td>
+            <td>{{scoreTwo}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>  
+</div>
